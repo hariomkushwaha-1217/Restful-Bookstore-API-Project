@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Bookstore API",
+    "_postman_id": "11111111-2222-3333-4444-555555555555",
+    "description": "CRUD + Search for Books and Authors",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Author",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"New Author\", \"bio\": \"Bio here\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/authors",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "authors"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Authors",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/authors",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "authors"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"New Book\", \"isbn\": \"1234567890123\", \"price\": 199.99, \"authorId\": 1, \"publishedDate\": \"2020-01-01\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Books",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/books?titleContains=clean&minPrice=100&sort=price,desc",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "books"
+          ],
+          "query": [
+            {
+              "key": "titleContains",
+              "value": "clean"
+            },
+            {
+              "key": "minPrice",
+              "value": "100"
+            },
+            {
+              "key": "sort",
+              "value": "price,desc"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
